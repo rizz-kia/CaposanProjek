@@ -31,6 +31,9 @@
             <a href="NilaiSekolah.html" class="menu-item">
                 <img src="./assets/school.png" alt="icon"> NILAI SEKOLAH
             </a>
+            </div>
+            <button class="logout-btn" onclick="logout()">LOGOUT</button>
+            </div>
     </aside>
     
     <!-- Main Content -->
