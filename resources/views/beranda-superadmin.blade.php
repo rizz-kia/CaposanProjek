@@ -3,66 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
-    <link href="/css/stylee.css" rel="stylesheet">
+    <title>Beranda Admin</title>
 </head>
 <body>
-    <div class="navbar">
-        <button class="hamburger">☰</button>
-        <div class="logo-container">
-            <img src="./assets/LOGO PONDOK OK-01.png" alt="Logo Pondok" class="logo">
-            <span class="pondok-name">PTQ. Pondok Bambu</span>
-        </div>
-    </div>    
-    
     <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="profile">
-            <img src="assets/fotoSantri.jpg" alt="Foto Aisyah">
-            <h2>AISYAH</h2>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>PTQ. Pondok Bambu</h2>
+            
         </div>
-        <div class="menu">
-            <a href="beranda.html" class="menu-item active">
-                <img src="./assets/dashboard.png" alt="icon"> BERANDA
-            </a>
-            <a href="NilaiPesantren.html" class="menu-item">
-                <img src="assets/masjid.png" alt="icon"> NILAI PESANTREN
-            </a>
-            <a href="NilaiSekolah.html" class="menu-item">
-                <img src="./assets/school.png" alt="icon"> NILAI SEKOLAH
-            </a>
-    </aside>
-    
-    <!-- Main Content -->
-    <main id="mainContent">
-        <h1>Selamat Datang, AISYAH(Admin)</h1>
-        <p>Silakan pilih menu dari sidebar untuk mulai</p>
-    </main>
-
-    <script>
-         // Toggle sidebar on mobile
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        });
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768 && 
-                !e.target.closest('.sidebar') && 
-                !e.target.closest('.hamburger')) {
-                document.querySelector('.sidebar').classList.remove('active');
-            }
-        });
-
-        // Set active menu item based on current page
-        const currentPage = window.location.pathname.split('/').pop() || 'beranda.html';
-        document.querySelectorAll('.menu-item').forEach(item => {
-            if (item.getAttribute('href') === currentPage) {
-                item.classList.add('active');
-            } else {
-                item.classList.remove('active');
-            }
-        });
-        </script>
+        
+        <div class="sidebar-menu">
+            <div class="menu-item active" onclick="showSection('dashboard')">
+                BERANDA
+            </div>
+            
+            <div class="menu-item" onclick="toggleSubmenu('data-master')">
+                MANAJEMEN DATA
+                <div class="submenu" id="data-master-submenu">
+                    <div class="submenu-item" onclick="showSection('data-santri')">Data Santri</div>
+                    <div class="submenu-item" onclick="showSection('data-guru')">Data Guru</div>
+                    <div class="submenu-item" onclick="showSection('data-mapel')">Mata Pelajaran</div>
+                    <div class="submenu-item" onclick="showSection('data-kelas')">Kelas</div>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="toggleSubmenu('nilai')">
+                MANAJEMEN NILAI
+                <div class="submenu" id="nilai-submenu">
+                    <div class="submenu-item" onclick="showSection('nilai-pesantren')">Nilai Pesantren</div>
+                    <div class="submenu-item" onclick="showSection('nilai-sekolah')">Nilai Sekolah</div>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="showSection('poin')">
+                MANAJEMEN POIN
+            </div>
+            
+            <div class="menu-item" onclick="showSection('profil')">
+                MANAJEMEN PROFIL
+            </div>
+            
+            <button class="logout-btn" onclick="logout()">LOGOUT</button>
+        </div>
+    </div>
 </body>
 </html>
