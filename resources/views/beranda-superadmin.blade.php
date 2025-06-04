@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beranda Admin</title>
+    <link href="/css/styleadmin.css" rel="stylesheet">
 </head>
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
             <h2>PTQ. Pondok Bambu</h2>
-
         </div>
         
         <div class="sidebar-menu">
@@ -47,7 +47,7 @@
             <button class="logout-btn" onclick="logout()">LOGOUT</button>
         </div>
     </div>
-
+    
     <!-- Main Content -->
     <div class="main-content">
         <div class="header">
@@ -57,8 +57,55 @@
         
         <!-- Dashboard Section -->
         <div class="welcome-message" id="dashboard-section">
-            <h3>Selamat Datang, Super Admin</h3>
-            <p>Silakan pilih menu dari sidebar untuk mulai</p>
+            <div class="header-dashboard">
+            <h3>Dashboard Super Admin</h3>
+            <p>Anda memiliki akses penuh untuk mengelola seluruh sistem PTQ. Pondok Bambu.</p>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Santri</h3>
+                    <h2>250</h2>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Guru</h3>
+                    <h2>35</h2>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Kelas</h3>
+                    <h2>12</h2>
+                </div>
+            </div>
+
+            <h3>Aktivitas Terakhir</h3>
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Waktu</th>
+                        <th>Aktivitas</th>
+                        <th>Pengguna</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:30, 28 Mei 2023</td>
+                        <td>Menambahkan data santri baru</td>
+                        <td>Super Admin</td>
+                    </tr>
+                    <tr>
+                        <td>09:45, 28 Mei 2023</td>
+                        <td>Mengupdate nilai tahfidz</td>
+                        <td>Guru Tahfidz</td>
+                    </tr>
+                    <tr>
+                        <td>Kemarin, 18:20</td>
+                        <td>Mengubah jadwal kelas</td>
+                        <td>Admin</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
         
         <!-- Data Santri Section -->
@@ -254,12 +301,12 @@
                 <h3>Manajemen Nilai Pesantren</h3>
                 <div>
                     <select style="width: 200px; margin-right: 10px;">
-                        <option>Pilih Kelas</option>
+                        <option value="all" selected hidden>Pilih Kelas</option>
                         <option>X IPA 1</option>
                         <option>X IPA 2</option>
                     </select>
                     <select style="width: 200px; margin-right: 10px;">
-                        <option>Pilih Mata Pelajaran</option>
+                        <option value="all" selected hidden>Pilih Mata Pelajaran</option>
                         <option>Tahfidz</option>
                         <option>Bahasa Inggris</option>
                         <option>Bahasa Arab</option>
@@ -301,12 +348,12 @@
                 <h3>Manajemen Nilai Sekolah</h3>
                 <div>
                     <select style="width: 200px; margin-right: 10px;">
-                        <option>Pilih Kelas</option>
+                        <option value="all" selected hidden>Pilih Kelas</option>
                         <option>X IPA 1</option>
                         <option>X IPA 2</option>
                     </select>
                     <select style="width: 200px; margin-right: 10px;">
-                        <option>Pilih Mata Pelajaran</option>
+                        <option value="all" selected hidden>Pilih Mata Pelajaran</option>
                         <option>Matematika</option>
                         <option>Fisika</option>
                         <option>Kimia</option>
@@ -486,5 +533,6 @@
             showSection('dashboard');
         });
     </script>
+</body>
 </body>
 </html>
