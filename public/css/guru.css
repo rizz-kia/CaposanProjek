@@ -1,0 +1,182 @@
+/* Sekolah.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: rgb(43, 99, 99);
+    color: white;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: white;
+}
+
+.sidebar-menu a,
+.dropdown-btn,
+.dropdown-content a {
+    display: block;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+    font-size: 12px;
+}
+
+.sidebar-menu a:hover,
+.dropdown-btn:hover,
+.dropdown-content a:hover {
+    background-color: #3e5f3e;
+    border-radius: 4px;
+}
+
+.dropdown {
+    margin-top: 10px;
+}
+
+.dropdown-content,
+.dropdown-sub {
+    padding-left: 20px;
+    display: none;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ecf0f1;
+    padding: 0;
+}
+
+.header {
+    background: rgb(79, 129, 87);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    padding: 10px 20px;
+}
+
+.admin-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logout {
+    background: transparent;
+    border: 1px solid white;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.card {
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+}
+
+.card.green {
+    background-color: #27ae60;
+}
+
+.card.orange {
+    background-color: #f39c12;
+}
+
+.card.red {
+    background-color: #e74c3c;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    color: #333;
+    font-size: 12px;
+    background-color: rgb(207, 206, 206);
+    margin-top: auto;
+}
+.dropdown-sub {
+    display: none;
+    padding-left: 20px;
+}
+.dropdown-sub,
+.dropdown-content {
+    display: none;
+    transition: all 0.3s ease;
+}
