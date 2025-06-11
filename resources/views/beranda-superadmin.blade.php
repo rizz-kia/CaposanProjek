@@ -52,61 +52,51 @@
     <div class="main-content">
         <div class="header">
             <h2 id="section-title">Dashboard</h2>
-            <div>Super Admin</div>
+            <div>Admin</div>
         </div>
         
         <!-- Dashboard Section -->
         <div class="welcome-message" id="dashboard-section">
-            <div class="header-dashboard">
-            <h3>Dashboard Super Admin</h3>
+            <h3>Dashboard Admin</h3>
             <p>Anda memiliki akses penuh untuk mengelola seluruh sistem PTQ. Pondok Bambu.</p>
-            </div>
-
-            <div class="dashboard-container">
-                <div class="stats-container">
-                <div class="stat-card">
-                    <h3>Total Santri</h3>
-                    <h2>250</h2>
+            <!-- Cards Statistik -->
+            <div class="dashboard-cards">
+                <!-- Card Total Santri -->
+                <div class="card stat-card bg-primary">
+                    <i class="fas fa-users"></i>
+                    <h3>1,250</h3>
+                    <p>Total Santri</p>
                 </div>
-                <div class="stat-card">
-                    <h3>Total Guru</h3>
-                    <h2>35</h2>
+                
+                <!-- Card Total Guru -->
+                <div class="card stat-card bg-success">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>42</h3>
+                    <p>Total Guru</p>
                 </div>
-                <div class="stat-card">
-                    <h3>Total Kelas</h3>
-                    <h2>12</h2>
+                
+                <!-- Card Nilai Terinput -->
+                <div class="card stat-card bg-warning">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>85%</h3>
+                    <p>Nilai Terinput</p>
                 </div>
             </div>
-
-            <h3>Aktivitas Terakhir</h3>
-            <table class="activity-table">
-                <thead>
-                    <tr>
-                        <th>Waktu</th>
-                        <th>Aktivitas</th>
-                        <th>Pengguna</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>10:30, 28 Mei 2023</td>
-                        <td>Menambahkan data santri baru</td>
-                        <td>Super Admin</td>
-                    </tr>
-                    <tr>
-                        <td>09:45, 28 Mei 2023</td>
-                        <td>Mengupdate nilai tahfidz</td>
-                        <td>Guru Tahfidz</td>
-                    </tr>
-                    <tr>
-                        <td>Kemarin, 18:20</td>
-                        <td>Mengubah jadwal kelas</td>
-                        <td>Admin</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-        </div>
+            <!-- Aktivitas Terakhir -->
+                <div class="card activity-card">
+                    <h4><i class="fas fa-history"></i> Aktivitas Terakhir</h4>
+                    <ul>
+                        <li>
+                            <span class="time">10 menit lalu</span>
+                            <span>Admin menambahkan nilai Tahfidz untuk Ahmad</span>
+                        </li>
+                        <li>
+                            <span class="time">1 jam lalu</span>
+                            <span>Ust. Muhammad mencatat pelanggaran (Telat Shubuh)</span>
+                        </li>
+                    </ul>
+                </div>
+        </div>    
         
         <!-- Data Santri Section -->
         <div class="content-section" id="data-santri-section">
@@ -155,10 +145,13 @@
                     <div class="form-group">
                         <label for="kelas-santri">Kelas</label>
                         <select id="kelas-santri" required>
-                            <option value="">Pilih Kelas</option>
-                            <option value="X IPA 1">X IPA 1</option>
-                            <option value="X IPA 2">X IPA 2</option>
-                            <!-- More options -->
+                            <option value="all" selected hidden>Pilih Kelas</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -302,8 +295,8 @@
                 <div>
                     <select style="width: 200px; margin-right: 10px;">
                         <option value="all" selected hidden>Pilih Kelas</option>
-                        <option>X IPA 1</option>
-                        <option>X IPA 2</option>
+                        <option>7</option>
+                        <option>8</option>
                     </select>
                     <select style="width: 200px; margin-right: 10px;">
                         <option value="all" selected hidden>Pilih Mata Pelajaran</option>
@@ -433,8 +426,8 @@
             
             <form>
                 <div class="form-group">
-                    <label for="nama-pondok">Nama Pondok</label>
-                    <input type="text" id="nama-pondok" value="PTO. Pondok Bambu">
+                    <label for="nama-santri">Nama Santri</label>
+                    <input type="text" id="nama-santri" value=" ">
                 </div>
                 <div class="form-group">
                     <label for="alamat-pondok">Alamat Pondok</label>
@@ -457,7 +450,7 @@
                 </div>
             </form>
         </div>
-    </div>
+</div>
     
     <script>
         function toggleSubmenu(menuId) {
@@ -532,6 +525,18 @@
         document.addEventListener('DOMContentLoaded', function() {
             showSection('dashboard');
         });
+        function showSection(sectionId) {
+    // Sembunyikan semua section
+    document.querySelectorAll('.main-content > div').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Tampilkan hanya section yang dipilih
+    document.getElementById(`${sectionId}-section`).style.display = 'block';
+}
+
+// Default: Tampilkan Beranda saat pertama load
+showSection('dashboard');
     </script>
 </body>
 </body>
