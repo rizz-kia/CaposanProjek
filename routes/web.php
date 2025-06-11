@@ -28,6 +28,14 @@ Route::get('/beranda-superadmin', function () {
     return view('beranda-superadmin');
 });
 
+Route::get('/beranda-guru', function () {
+    return view('beranda-guru');
+});
+
+Route::get('/beranda-superadmin', function () {
+    return view('beranda-superadmin');
+});
+
 use App\Http\Controllers\AuthController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
