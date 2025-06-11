@@ -26,7 +26,7 @@ Route::get('/beranda-santri', function () {
 
 Route::get('/beranda-superadmin', function () {
     return view('beranda-superadmin');
-});
+})->name('beranda');
 
 Route::get('/data-santri', function () {
     return view('data-santri');
