@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
-});
+
 Route::get('/beranda-guru', function () {
     return view('beranda-guru');
 });
@@ -26,7 +24,7 @@ Route::get('/beranda-santri', function () {
 
 Route::get('/beranda-superadmin', function () {
     return view('beranda-superadmin');
-})->name('beranda');
+});
 
 Route::get('/data-santri', function () {
     return view('data-santri');
@@ -35,6 +33,8 @@ Route::get('/data-santri', function () {
 Route::get('/manajemendata-santri', function () {
     return view('manajemendata-santri');
 });
+
+
 
 use App\Http\Controllers\AuthController;
 
